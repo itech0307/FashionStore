@@ -10,16 +10,44 @@ if (isset($_SESSION["uid"])) {
 
 <head>
   <meta charset="UTF-8">
-  <title>Ecomm</title>
+  <title>FAS | Mua Online Quần Áo Thời Trang Nam Nữ Giá Rẻ</title>
+  <link rel="shortcut icon" href="img/favicon.png">
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <script src="assets/js/jquery2.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="main.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
+
   <style></style>
 </head>
 
 <body>
+  <!-- banner slide -->
+  <div class="w3-content w3-section">
+    <img class="mySlides" src="img/slider-1.png">
+    <img class="mySlides" src="img/slider-2.jpg">
+    <img class="mySlides" src="img/slider-3.png">
+    <img class="mySlides" src="img/slider-4.png">
+  </div>
+  <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {
+        myIndex = 1
+      }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 4000); // Change image every 4 seconds
+    }
+  </script>
+
   <div class="wait overlay">
     <div class="loader"></div>
   </div>
@@ -35,10 +63,10 @@ if (isset($_SESSION["uid"])) {
         <a href="index.php" class="navbar-brand">Ecommerce Site</a>
       </div>
       <div class="collapse navbar-collapse" id="collapse">
-        <ul class="nav navbar-nav">
+        <!-- <ul class="nav navbar-nav">
           <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
           <li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span> Products</a></li>
-        </ul>
+        </ul> -->
         <form class="navbar-form navbar-left">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search" id="search">
@@ -97,8 +125,7 @@ if (isset($_SESSION["uid"])) {
     </div>
   </div>
   <p><br /></p>
-  <p><br /></p>
-  <p><br /></p>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-1"></div>
